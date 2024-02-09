@@ -1,16 +1,18 @@
 ﻿@model IEnumerable<AppVendasWeb.Models.Produto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Produtos";
 }
 
-<h1>Index</h1>
+<h1 class="display-5 text-light my-5 text-dark">Produtos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="16" height="16" aria-label="Alarms"></svg>Adicionar
+    </a>
 </p>
-<table class="table table-dark table-striped table-hover">
-    <thead>
+<table class="table  table-hover" style="background:#50623A; color:white">
+    <thead style="background:#789461">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
@@ -25,23 +27,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.CategoriaName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.CategoriaName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProdutoId"> <svg class="mx-3" bootstrap-icon="PencilFill" width="24" height="24" aria-label="PencilFill"></svg></a> |
+                    <a asp-action="Details" asp-route-id="@item.ProdutoId"><svg class="mx-3" bootstrap-icon="CardText" width="24" height="24" aria-label="CardText"></svg></a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProdutoId"><svg class="mx-3" bootstrap-icon="Trash" width="24" height="24" aria-label="Trash2Fill"></svg></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,23 +1,23 @@
 ﻿@model IEnumerable<AppVendasWeb.Models.Cliente>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cliente";
 }
 
-<h1 class="display-5 text-light my-5">Cadastro Novo Clientes</h1>
+<h1 class="display-5 text-light my-5 text-dark">Cadastro Novo Clientes</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-lg btn-outline-light d-inline-flex align-items-center">
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
         <svg class="me-3" bootstrap-icon="PlusLg" width="16" height="16" aria-label="Alarms"></svg>Adicionar
     </a>
 </p>
 
 <div class="table-responsive">
 
-    <table class="table table-dark table-striped table-hover">
-        <thead>
+    <table class="table table-hover" style="background:#50623A; color:white">
+        <thead style="background:#789461">
             <tr>
-                <th>
+                <th class="hqqq">
                     @Html.DisplayNameFor(model => model.ClienteNome)
                 </th>
                 <th>
@@ -32,14 +32,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Celular)
                 </th>
+
+
                 <th>
-                    @Html.DisplayNameFor(model => model.DataCadastro)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CadastroAtivo)
-                </th>
-                <th>
-                    Ativo
+
                 </th>
                 <th></th>
             </tr>
@@ -63,21 +59,20 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Celular)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DataCadastro)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CadastroAtivo)
-                    </td>
+
+
                     <td class="text-end">
-                        <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@item.ClienteId">
-                            <svg class="mx-2" bootstrap-icon="PencilFill" width="16" height="16" aria-label="Alarms"></svg>
+                        <a class="text-decoration-none" asp-action="Edit" asp-route-id="@item.ClienteId">
+                            <svg class="mx-3" bootstrap-icon="PencilFill" width="24" height="24" aria-label="PencilFill"></svg>
+
                         </a> |
-                        <a class="btn btn-outline-light" asp-action="Details" asp-route-id="@item.ClienteId">
-                            <svg class="mx-2" bootstrap-icon="CardList" width="16" height="16" aria-label="Alarms"></svg>
+                        <a class="text-decoration-none" asp-action="Details" asp-route-id="@item.ClienteId">
+                            <svg class="mx-3" bootstrap-icon="CardText" width="24" height="24" aria-label="CardText"></svg>
+
                         </a> |
-                        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ClienteId">
-                            <svg class="mx-2" bootstrap-icon="Trash2" width="16" height="16" aria-label="Alarms"></svg>
+                        <a class="text-decoration-none" asp-action="Delete" asp-route-id="@item.ClienteId">
+                            <svg class="mx-3" bootstrap-icon="Trash" width="24" height="24" aria-label="PencilFill"></svg>
+
                         </a>
                     </td>
                 </tr>

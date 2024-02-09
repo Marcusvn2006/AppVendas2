@@ -22,9 +22,17 @@
                 <input id="CPF" asp-for="CPF" class="form-control" />
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" type="email" class="form-control" />
+            <div class="input-group" style="    margin-top: 15px;
+    border-radius: 3px;">
+
+
+
+
+                <div class="input-group-text" id="btnGroupAddon2">@@</div>
+                <input asp-for="Email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="btnGroupAddon2">
+
+
+
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,17 +55,15 @@
                     <input class="form-check-input" role="switch" asp-for="CadastroAtivo" /> @Html.DisplayNameFor(model => model.CadastroAtivo)
                 </label>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-outline-light">Voltar</a>
+            <div class="form-group" style="margin-top:20px">
+                <input type="submit" value="Create" class="btn btn-dark btn-primary" />
+
+                <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

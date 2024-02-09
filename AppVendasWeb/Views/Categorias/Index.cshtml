@@ -1,26 +1,27 @@
 ﻿@model IEnumerable<AppVendasWeb.Models.Categoria>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categorias";
 }
 
-<h1 class="display-5 text-light my-5">Categoria do Produto</h1>
+<h1 class="display-5 text-dark my-5">Categoria do Produto</h1>
 
 <p>
-    <a class="btn btn-outline-light" asp-action="Create">
-        <svg bootstrap-icon="FilePlus" width="24" height="24" aria-label="FilePlus "></svg>
-        Adicionar
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="16" height="16" aria-label="Alarms"></svg>Adicionar
     </a>
 </p>
-<table class="table table-dark table-striped table-hover">
-    <thead>
+<table class="table  table-hover" style="background:#50623A; color:white">
+    <thead style="background:#789461">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.CategoriaName)
+
             </th>
             <th></th>
         </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -29,15 +30,19 @@
                     @Html.DisplayFor(modelItem => item.CategoriaName)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.CategoriaId">
+                    <a class=" text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.CategoriaId">
                         <svg class="mx-3" bootstrap-icon="PencilFill" width="24" height="24" aria-label="PencilFill"></svg>
-                    Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.CategoriaId">
+
+                    </a>|
+                    <a class=" text-light text-decoration-none" asp-action="Details" asp-route-id="@item.CategoriaId">
                         <svg class="mx-3" bootstrap-icon="CardText" width="24" height="24" aria-label="CardText"></svg>
-                    Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CategoriaId">
-                        <svg class="mx-3" bootstrap-icon="Trash" width="24" height="24" aria-label="Trash2Fill"></svg>
-                     Deletar</a>
+
+                    </a>|
+
+                    <a class=" text-light text-decoration-none" asp-action="Delete" asp-route-id="@item.CategoriaId">
+                        <svg class="mx-3" bootstrap-icon="Trash" width="24" height="24" aria-label="PencilFill"></svg>
+
+                    </a>
                 </td>
             </tr>
         }
